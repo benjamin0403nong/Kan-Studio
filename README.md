@@ -50,13 +50,27 @@ kan-studio/
 - 在 `index.html` 中修改內容
 - 在 `js/main.js` 中添加互動功能
 
-## 部署
+## 部署到 GitHub Pages
 
-可以部署到任何靜態網站託管服務：
-- GitHub Pages
-- Netlify
-- Vercel
-- 等等...
+### 快速部署
+
+```bash
+# 使用部署腳本
+./deploy-ghp.sh
+```
+
+詳細部署步驟請查看 **[DEPLOY.md](DEPLOY.md)**
+
+### 在線訪問
+
+部署完成後，網站會在：
+https://benjamin0403nong.github.io/Kan-Studio/
+
+## 已整合功能
+
+✅ **AdSense 廣告** - 已整合 Google AdSense（需審核通過後才會顯示示廣告）
+✅ **開始創造按鈕** - 新增互動按鈕
+✅ **測試佔位符** - 本地環境會顯示廣告預留位置
 
 ---
 
