@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kan Studio - 創意設計工作室</title>
     <link rel="stylesheet" href="css/style.css">
+
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7058269455752909"
+     crossorigin="anonymous"></script>
 </head>
 <body>
     <header>
@@ -22,12 +26,38 @@
         </nav>
     </header>
 
+    <!-- AdSense 廣告區塊 - 放在開頭 -->
+    <section class="ad-banner">
+        <div class="container">
+            <div class="ad-container">
+                <!-- kind cup 咖啡 -->
+                <div id="ad-wrapper">
+                    <ins class="adsbygoogle"
+                         style="display:inline-block;width:728px;height:90px"
+                         data-ad-client="ca-pub-7058269455752909"
+                         data-ad-slot="2936320649"></ins>
+                    <script>
+                         (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                </div>
+                <!-- 測試用佔位符（本地環境會顯示，正式上線後廣告載入會自動隱藏） -->
+                <div class="ad-placeholder" id="ad-placeholder">
+                    📢 AdSense 廣告區塊 (728 x 90)
+                    <br><small>正式上線後會顯示廣告</small>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <main>
         <section id="home" class="hero">
             <div class="hero-content">
                 <h2>創意的無限可能</h2>
                 <p>Kan Studio 專注於為您打造獨特的數位體驗</p>
-                <a href="#contact" class="cta-button">開始合作</a>
+                <div class="button-group">
+                    <a href="#contact" class="cta-button">開始合作</a>
+                    <a href="#" class="create-button" onclick="startCreate()">開始創造</a>
+                </div>
             </div>
         </section>
 

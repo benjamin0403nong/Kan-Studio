@@ -66,6 +66,52 @@ body {
     color: #fff;
 }
 
+/* Ad Banner */
+.ad-banner {
+    padding: 30px 0;
+    background: #fff;
+    border-bottom: 1px solid #eee;
+}
+
+.ad-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    min-height: 90px;
+}
+
+.ad-container ins {
+    background-color: transparent;
+    z-index: 2;
+}
+
+/* 測試用佔位符 */
+.ad-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 728px;
+    height: 90px;
+    background: linear-gradient(135deg, #e0e0e0 0%, #f0f0f0 100%);
+    border: 2px dashed #bbb;
+    border-radius: 8px;
+    color: #666;
+    font-size: 18px;
+    line-height: 1.4;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+.ad-placeholder small {
+    font-size: 14px;
+    color: #999;
+}
+
 .hero-content h2 {
     font-size: 48px;
     margin-bottom: 20px;
@@ -91,6 +137,32 @@ body {
 .cta-button:hover {
     transform: translateY(-2px);
     box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+}
+
+/* Button Group */
+.button-group {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+/* Create Button */
+.create-button {
+    display: inline-block;
+    padding: 15px 40px;
+    background: linear-gradient(135deg, #00b894, #00cec9);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: bold;
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+}
+
+.create-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(0,184,148,0.4);
 }
 
 /* About Section */

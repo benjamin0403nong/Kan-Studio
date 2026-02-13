@@ -60,3 +60,35 @@ document.querySelectorAll('.service-card, .portfolio-item').forEach(el => {
 });
 
 console.log('Kan Studio loaded successfully!');
+
+// Start Create Button Function
+function startCreate() {
+    alert('🚀 開始創造功能即將推出！\n\n感謝您的興趣，我們正在努力開發中...');
+
+    // 這裡可以添加更多功能，例如：
+    // - 開啟創造頁面
+    // - 顯示創造選單
+    // - 開啟創造模式等
+}
+
+// AdSense 廣告偵測 - 廣告載入後隱藏佔位符
+window.addEventListener('load', function() {
+    setTimeout(function() {
+        const adWrapper = document.querySelector('#ad-wrapper ins.adsbygoogle');
+        const adPlaceholder = document.querySelector('#ad-placeholder');
+
+        // 檢查廣告是否載入成功（height > 0 或有 iframe）
+        if (adWrapper && adPlaceholder) {
+            const adHeight = adWrapper.offsetHeight;
+            const hasIframe = adWrapper.querySelector('iframe');
+
+            // 如果廣告載入成功，隱藏佔位符；否則保留佔位符
+            if (adHeight > 0 || hasIframe || adWrapper.innerHTML.trim() !== '') {
+                adPlaceholder.style.display = 'none';
+                console.log('AdSense 廣告載入成功！');
+            } else {
+                console.log('AdSense 廣告未載入（本地環境正常現象）');
+            }
+        }
+    }, 2000); // 延遲 2 秒偵測，給廣告時間載入
+});
