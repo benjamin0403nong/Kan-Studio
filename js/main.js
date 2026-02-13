@@ -71,23 +71,28 @@ function startCreate() {
     // - 開啟創造模式等
 }
 
-// AdSense 廣告偵測 - 廣告載入後隱藏佔位符
+// AdSense 廣告偵測 - 更準確的偵測邏輯
 window.addEventListener('load', function() {
     setTimeout(function() {
         const adWrapper = document.querySelector('#ad-wrapper ins.adsbygoogle');
         const adPlaceholder = document.querySelector('#ad-placeholder');
 
-        // 檢查廣告是否載入成功（height > 0 或有 iframe）
+        // 檢查是否有真正的 AdSense iframe (來自 googleads.g.doubleclick.net)
         if (adWrapper && adPlaceholder) {
-            const adHeight = adWrapper.offsetHeight;
-            const hasIframe = adWrapper.querySelector('iframe');
+            const adIframe = adWrapper.querySelector('iframe');
 
-            // 如果廣告載入成功，隱藏佔位符；否則保留佔位符
-            if (adHeight > 0 || hasIframe || adWrapper.innerHTML.trim() !== '') {
+            // 只有當 iframe 來自 Google Ads 時才隱藏佔位符
+            const hasRealAd = adIframe && (
+                adIframe.src.includes('googleads.g.doubleclick.net') ||
+                adIframe.src.includes('pagead2.googlesyndication.com')
+            );
+
+            if (hasRealAd) {
                 adPlaceholder.style.display = 'none';
-                console.log('AdSense 廣告載入成功！');
+                console.log('✅ AdSense 廣告載入成功！');
             } else {
-                console.log('AdSense 廣告未載入（本地環境正常現象）');
+                console.log('⏳ AdSense 廣告未載入（正常現象：GitHub Pages 或未審核）');
+                console.log('💡 佔位符會繼續顯示，直到 AdSense 審核通過');
             }
         }
     }, 2000); // 延遲 2 秒偵測，給廣告時間載入
